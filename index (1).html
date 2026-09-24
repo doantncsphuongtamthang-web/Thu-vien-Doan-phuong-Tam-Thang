@@ -1,7 +1,28 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thư viện Đoàn phường Tam Thắng</title><link rel="stylesheet" href="/styles.css"></head><body>
-<header class="top"><div class="wrap nav"><a class="brand" href="/"><img src="/logo-doan.png"><span><b>THƯ VIỆN ĐOÀN</b><small>PHƯỜNG TAM THẮNG</small></span></a><nav><a href="/">Trang chủ</a><a href="/documents.html">Tài liệu</a><a href="/news.html">Tin hoạt động</a><a class="admin-link" href="/admin">Đăng nhập</a></nav><button class="menu" onclick="document.querySelector('nav').classList.toggle('show')">☰</button></div></header>
-<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">ĐOÀN TNCS HỒ CHÍ MINH</span><h1>Thư viện số<br><strong>Đoàn phường Tam Thắng</strong></h1><p>Tra cứu văn bản, tài liệu nghiệp vụ và thông tin hoạt động Đoàn trên một nền tảng trực tuyến.</p><div class="actions"><a class="btn primary" href="/documents.html">Tra cứu tài liệu</a><a class="btn" href="/news.html">Xem hoạt động</a></div></div><div class="hero-card"><div class="hero-icon">📚</div><b>Kho tài liệu trực tuyến</b><span>PDF • DOC • DOCX</span></div></div></section>
-<section class="wrap section"><div class="section-head"><div><span class="eyebrow">KHO TÀI LIỆU</span><h2>Tài liệu nổi bật</h2></div><a href="/documents.html">Xem tất cả →</a></div><div id="featured" class="cards"><div class="loading">Đang tải...</div></div></section>
-<section class="wrap section"><div class="section-head"><div><span class="eyebrow">TIN HOẠT ĐỘNG</span><h2>Thông tin mới</h2></div><a href="/news.html">Xem tất cả →</a></div><div id="news" class="news-grid"><div class="loading">Đang tải...</div></div></section></main>
-<footer><div class="wrap footer-grid"><div><b>THƯ VIỆN ĐOÀN PHƯỜNG TAM THẮNG</b><p>Kho tài liệu và thông tin hoạt động Đoàn trực tuyến.</p></div><div>© 2026 Đoàn phường Tam Thắng</div></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/supabase-config.js"></script><script src="/app.js"></script><script>loadHome();</script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b72ce">
+<title>Thư viện Đoàn phường Tam Thắng</title>
+<link rel="icon" href="logo-doan.png"><link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav">
+<a class="brand" href="index.html"><img src="logo-doan.png"><div><b>THƯ VIỆN ĐOÀN PHƯỜNG TAM THẮNG</b><span>Phường Tam Thắng</span></div></a>
+<button class="menu-btn" id="menuBtn">☰</button>
+<nav id="mainNav"><a class="active" href="#home">⌂ Trang chủ</a><a href="#news">📰 Tin hoạt động</a><a href="#documents">📚 Tài liệu</a><a href="#albums">📸 Hình ảnh</a><a href="#videos">🎬 Video</a><a href="admin/">🔐 Đăng nhập</a></nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid"><div><span class="eyebrow">THƯ VIỆN SỐ · ĐOÀN PHƯỜNG TAM THẮNG</span><h1>Kho tư liệu<br><strong>Tuổi trẻ Tam Thắng</strong></h1><p>Xem, tra cứu và tải công khai tài liệu, hình ảnh, video và tin hoạt động của Đoàn phường Tam Thắng.</p>
+<div class="search"><span>⌕</span><input id="globalSearch" placeholder="Tìm tin, tài liệu, album hình ảnh..."></div></div><div class="hero-card"><img src="logo-doan.png"><b>Đoàn phường Tam Thắng</b><span>Phường Tam Thắng</span><small>Đoàn kết · Sáng tạo · Tình nguyện</small></div></div></section>
+<section class="wrap stats" id="stats"></section>
+<section class="wrap section" id="news"><div class="section-head"><div><span class="eyebrow dark">CẬP NHẬT</span><h2>Tin hoạt động</h2></div><a href="#news" class="text-link">Xem tất cả →</a></div><div id="newsGrid" class="news-grid"></div></section>
+<section class="wrap section" id="documents"><div class="section-head"><div><span class="eyebrow dark">KHO TƯ LIỆU</span><h2>Tài liệu công khai</h2></div><a href="#documents" class="text-link">Xem tất cả →</a></div>
+<div class="toolbar"><input id="docSearch" placeholder="🔎 Tìm tài liệu..."><select id="docYear"><option value="">Tất cả năm</option></select><select id="docCat"><option value="">Tất cả danh mục</option></select></div><div id="docsGrid" class="docs-grid"></div></section>
+<section class="wrap section" id="albums"><div class="section-head"><div><span class="eyebrow dark">KHOẢNH KHẮC</span><h2>Thư viện hình ảnh</h2></div></div><div id="albumsGrid" class="album-grid"></div></section>
+<section class="wrap section" id="videos"><div class="section-head"><div><span class="eyebrow dark">VIDEO</span><h2>Video hoạt động</h2></div></div><div id="videosGrid" class="video-grid"></div></section>
+</main>
+<footer><div class="wrap footer-grid"><div><img src="logo-doan.png"><b>THƯ VIỆN ĐOÀN PHƯỜNG TAM THẮNG</b><span>Phường Tam Thắng</span></div><div><b>Kho công khai</b><a href="#documents">Tài liệu</a><a href="#albums">Hình ảnh</a><a href="#news">Tin hoạt động</a></div><div><b>Quản trị</b><a href="admin/">Đăng nhập quản trị</a><small>© 2026 Đoàn phường Tam Thắng</small></div></div></footer>
+<script src="app.js"></script>
+</body></html>
